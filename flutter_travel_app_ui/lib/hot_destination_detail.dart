@@ -35,9 +35,11 @@ class _DestinationDetailState extends State<DestinationDetail>
 }
 
 class DestinationPage extends StatelessWidget {
-  final imagePath;
+  final String imagePath;
   DestinationPage(
-      {Key? key, required AnimationController controller, this.imagePath})
+      {Key? key,
+      required AnimationController controller,
+      required this.imagePath})
       : animation = DestinationPageEnterAnimation(controller),
         super(key: key);
   final DestinationPageEnterAnimation animation;
@@ -60,7 +62,7 @@ class DestinationPage extends StatelessWidget {
             child: RaisedButton(
                 onPressed: () => {},
                 shape: RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(10.0)),
+                    borderRadius: BorderRadius.circular(10.0)),
                 color: AppColor.lightSecondary,
                 child: const TextStyleWidget(
                   title: 'Select location',
@@ -72,7 +74,7 @@ class DestinationPage extends StatelessWidget {
           body: ListView(
             children: [
               Container(
-                padding: EdgeInsets.only(top: 30),
+                padding: const EdgeInsets.only(top: 30),
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
